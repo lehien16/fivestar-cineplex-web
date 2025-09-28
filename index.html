@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FiveStar Cineplex</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <a href="#home" class="logo">
+    <img src="images/logo.png" alt="FiveStar Logo" style="height: 35px;">
+  </a>
+
+  <nav class="navbar">
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Phim <span class="arrow">&#9662;</span></a>
+      <div class="dropdown-content">
+        <a href="#showtimes">Lịch chiếu phim</a>
+        <a href="cinemashowtimes.html">Lịch chiếu rạp</a>
+      </div>
+    </div>
+
+    <a href="foods-drinks.html">Thức ăn &amp; nước</a>
+    <a href="deal.html">Ưu đãi &amp; khuyến mãi</a>
+    <a href="service.html">Dịch vụ &amp; tiện ích</a>
+    <a href="introduce.html">Giới thiệu</a>
+  </nav>
+
+  <button class="login-btn">Đăng nhập/ Đăng ký</button>
+</header>
+
+<section id="home" class="home">
+  <div class="slider">
+    <div class="slides">
+      <img src="images/img1.jpg" alt="Banner 1">
+      <img src="images/img2.jpg" alt="Banner 2">
+      <img src="images/img3.jpg" alt="Banner 3">
+      <img src="images/img4.jpg" alt="Banner 4">
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <button class="buy">ĐẶT VÉ NGAY <span class="ticket">🎫</span></button>
+
+    <div class="dots"></div>
+  </div>
+</section>
+
+<section id="showtimes" class="now-showing">
+  <h2>PHIM ĐANG CHIẾU</h2>
+
+  <div class="movie-slider-container">
+    <button class="prev-movie">&#10094;</button>
+    <div id="movie-slider" class="movie-slider"></div>
+    <button class="next-movie">&#10095;</button>
+  </div>
+
+  <div class="movie-dots"></div>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
