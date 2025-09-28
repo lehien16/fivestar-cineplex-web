@@ -1,26 +1,27 @@
 const express = require("express");
 const mysql = require("mysql2");
-const cors = require("cors");
-
 const app = express();
-app.use(cors());
+const PORT = process.env.PORT || 5000;
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "fivestar",
   charset: "utf8mb4"
 });
 
 app.get("/movies", (req, res) => {
   db.query("SELECT * FROM movies", (err, results) => {
-    if (err) return res.status(500).json({ error: err });
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
     res.json(results);
   });
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log("Server is running on port " + port);
+app.get("/", (req, res) => {
+  res.send("API FiveStar đang chạy! Dùng /movies để lấy dữ liệu.");
 });
+
+app.listen(PORT, () => console.log(`Server chạy cổng ${PORT}`));
